@@ -6,11 +6,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.json.JSONException;
-
 import com.rate.entity.Stock;
+
+import net.sf.json.JSONException;
 
 
 public class ReadUrlUtil
@@ -42,10 +43,11 @@ public class ReadUrlUtil
 	public void analysis(String url) throws JSONException, IOException
 	{
 		String json = readJsonFromUrl(url);
-    
+		List<Stock> list = new ArrayList<Stock>();
+		getData(json,list);
 	}
 	
-	public List<Stock> getData(String json, List<Stock> list)
+	public void getData(String json, List<Stock> list)
 	{
 		if(json.length() == 0)
 		{
