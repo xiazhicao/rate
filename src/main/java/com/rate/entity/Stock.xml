@@ -1,20 +1,33 @@
 <valueobject name='com.rate.entity.Stock'>
-<attributes>
-    <attribute name="id" type="java.lang.Integer" column="ID"  persistence="no"/>
-    <attribute name="name" type="java.lang.String" column="NAME" resource="true" size="128"/>
-    <attribute name="stockId" type="java.lang.Integer" column="STOCK_ID"  persistence="no"/>
-    <attribute name="price" type="java.lang.Double" column="PRICE"  persistence="no"/>
-    <attribute name="volume" type="java.lang.Double" column="VOLUME"  persistence="no"/>
-</attributes>
+	<attributes>
+		<attribute name="id" type="java.lang.Integer" column="ID"
+			persistence="no" />
+		<attribute name="name" type="java.lang.String" column="NAME"
+			resource="true" size="128" />
+		<attribute name="stockId" type="java.lang.Integer"
+			column="STOCK_ID" persistence="no" />
+		<attribute name="price" type="java.lang.Double"
+			column="PRICE" persistence="no" />
+		<attribute name="volume" type="java.lang.Double"
+			column="VOLUME" persistence="no" />
+		<attribute name="addedBy" type="java.lang.Integer"
+			column="ADDED_BY" persistence="no" />
+		<attribute name="modifiedBy" type="java.lang.Integer"
+			column="MODIFIED_BY" persistence="no" />
+		<attribute name="deletedBy" type="java.lang.Integer"
+			column="DELETED_BY" persistence="no" />
+	</attributes>
 
-<saveMethod name="save">
-    <storedProcedure name="ADDMODSTOCK">
-      <input_parameter attribute_name="id" inout="true"/>
-      <input_parameter attribute_name="name"/>         
-      <input_parameter attribute_name="stockId"/>
-      <input_parameter attribute_name="price"/>
-      <input_parameter attribute_name="volume"/>
-    </storedProcedure>
-</saveMethod> 
+	<saveMethod name="save">
+		<storedProcedure name="ADDMODSTOCK">
+			<input_parameter attribute_name="name" />
+			<input_parameter attribute_name="stockId" />
+			<input_parameter attribute_name="price" />
+			<input_parameter attribute_name="volume" />
+			<input_parameter attribute_name="addedBy" />
+			<input_parameter attribute_name="modifiedBy" />
+			<input_parameter attribute_name="deletedBy" />
+		</storedProcedure>
+	</saveMethod>
 
 </valueobject>

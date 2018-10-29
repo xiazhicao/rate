@@ -2,12 +2,13 @@ package com.rate.entity;
 
 import java.sql.Timestamp;
 
-public class Stock {
+import com.rate.persistence.ValueObject;
+
+public class Stock extends ValueObject{
 	private String name;
 	private Timestamp added;
 	private Double price;
 	private Double volume;
-	private Integer id;
 	private Double high;
 	private Double low;
 	private Integer stockId;
@@ -50,14 +51,6 @@ public class Stock {
 
 	public void setVolume(Double volume) {
 		this.volume = volume;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public Double getHigh() {
